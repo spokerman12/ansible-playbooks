@@ -2,11 +2,12 @@
 # Playbook for setting up a RabbitMQ server.
 
 - name: Set up rabbitmq servers
-  hosts: rabbitmq
+  hosts: 127.0.0.1
   become: true
+  connection: local
   roles:
-    - role: common-server
-      tags: 'common-server'
+    # - role: common-server
+    #   tags: 'common-server'
 
     - role: rabbitmq
       tags: 'rabbitmq'
